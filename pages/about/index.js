@@ -36,9 +36,7 @@ const aboutData = [
       },
     ],
   },
-  {
 
-  },
   {
     title: 'experience',
     info: [
@@ -65,8 +63,8 @@ const aboutData = [
         stage: '2022-2023',
       },
       {
-        title: 'B.Sc Chemical Engineering Ben Gurion University of The Negev',
-        stage: '2015-2020',
+        title: 'B.Sc Chemical Engineering Ben Gurion University ',
+        stage: '2016-2020',
       },
     ],
   },
@@ -91,6 +89,7 @@ const About = () => {
   return <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
     <Circles />
 
+
     <motion.div variants={fadeIn('right', 0.2)} initial="hidden" animate="show" exit="hidden" className="hidden xl:flex absolute -bottom-[200px] -left-[320px] w-[600px]">
       <Avatar />
     </motion.div>
@@ -98,31 +97,32 @@ const About = () => {
     <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6 ">
 
       <div className="flex-1 flex flex-col justify-center">
-        <h2 className="h2 xl:ml-[100px]"> Coding <span className="text-accent">Narratives</span>  Crafting Innovation.</h2>
-        <p className="max-w-[600px] mx-auto xl:ml-[100px] mb-6 xl:mb-12 px-2 xl:px-0">Shifting from chemical engineering, I pursued software development driven by passion. Appleseeds Full Stack Developer Bootcamp graduate with analytical expertise and coding skills, ready for impactful roles in Fullstack or Frontend domains.</p>
+        <motion.h2 variants={fadeIn('right', 0.2)} initial="hidden" animate="show" exit="hidden" className="h2 xl:ml-[100px]"> Coding <span className="text-accent">Narratives</span>  Crafting Innovation.</motion.h2>
+        <motion.p variants={fadeIn('right', 0.4)} initial="hidden" animate="show" exit="hidden" className="max-w-[600px] mx-auto xl:ml-[100px] mb-6 xl:mb-12 px-2 xl:px-0">Shifting from chemical engineering, I pursued software development driven by passion. Appleseeds Full Stack Developer Bootcamp graduate with analytical expertise and coding skills, ready for impactful roles in Fullstack or Frontend domains.</motion.p>
 
+        {/* counters */}
+        <motion.div variants={fadeIn('right', 0.6)} initial="hidden" animate="show" exit="hidden" className="hidden md:flex mdx:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8">
+          <div className="flex flex-1 xl:gap-x-6 ">
 
-        <div>
-          <div>
             <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0  xl:ml-[100px]">
               <div className="text-2xl xl:text:4xl font-extrabold text-accent mb-2">
                 <CountUp start={0} end={1} duration={10} /> +
               </div>
-              <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]"> Years of experience</div>
+              <div className="text-xs uppercase tracking-[1px] leading-[1.4] xl:max-w-[100px] "> Years of experience</div>
             </div>
 
-            <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0  xl:ml-[100px]">
+            <div className="relative flex-1  xl:ml-[100px] ">
               <div className="text-2xl xl:text:4xl font-extrabold text-accent mb-2">
                 <CountUp start={0} end={`${repoNum}`} duration={7} /> +
               </div>
-              <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">repositories</div>
+              <div className="text-xs uppercase tracking-[1px] leading-[1.4] xl:max-w-[100px] ">repositories</div>
             </div>
 
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="flex flex-col w-full xl:max-w-[48%] h-[480px]">
+      <motion.div variants={fadeIn('left', 0.4)} initial="hidden" animate="show" exit="hidden" className="flex flex-col w-full xl:max-w-[48%] h-[480px]">
         <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
 
           {aboutData.map((item, itemIndex) => {
@@ -148,7 +148,7 @@ const About = () => {
             )
           })}
         </div>
-      </div>
+      </motion.div>
     </div>
   </div>;
 };

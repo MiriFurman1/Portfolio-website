@@ -12,7 +12,7 @@ const projects = () => {
         {/* text */}
         <div className='text-center flex flex-col  mb-4  items-center '   >
           <motion.h2 variants={fadeIn('up',0.2)} initial="hidden" animate="show" exit="hidden" className='h2 xl:mt-8'>My projects <span className='text-accent'>.</span></motion.h2>
-          <motion.p variants={fadeIn('up',0.4)} initial="hidden" animate="show" exit="hidden" className='mb-4 max-w-[400px] xl:max-w-[800px] mx-auto lg:mx-0'>Step into my world of web development where creativity meets functionality. Here, you'll discover a selection of projects that highlight my journey of mastering various technologies. 
+          <motion.p variants={fadeIn('up',0.4)} initial="hidden" animate="show" exit="hidden" className='mb-4 max-w-[400px] xl:max-w-[800px] mx-auto lg:mx-0'>Step into my world of web development where creativity meets functionality. Here, you will discover a selection of projects that highlight my journey of mastering various technologies. 
           </motion.p>
         </div>
         {/* slider */}

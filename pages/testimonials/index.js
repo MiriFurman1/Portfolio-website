@@ -1,5 +1,9 @@
+import TestimonialSlider from "../../components/TestimonialSlider";
+
 const Testimonials = () => {
-  return <div>Testimonials</div>;
+  return <div>
+    <TestimonialSlider/>
+  </div>;
 };
 
 export default Testimonials;

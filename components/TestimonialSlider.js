@@ -6,13 +6,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-import 'swiper/css/grid';
+import 'swiper/css/navigation';
 
-import { Grid, Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { BsArrowRight } from 'react-icons/bs';
+import { FaQuoteLeft } from 'react-icons/fa';
 
 const testimonialData = [
   {
@@ -42,31 +42,32 @@ const TestimonialSlider = () => {
   return (
     <Swiper
       spaceBetween={10}
-      slidesPerView={3}
       loop={true}
+      navigation={true}
       pagination={{
         clickable: true
       }}
-      grid={{
-        rows: 1,
-      }}
-      modules={[Grid, Pagination]}
-      className="h-[300px]"
+      modules={[Navigation,Pagination]}
+      className="h-[450px] "
     >
       {testimonialData.map((person, index) => (
         <SwiperSlide key={index}>
-          <div>
-            <div>
-              <div>
-                <div>
-                  avatar image   
+          <div className='flex flex-col items-center md:flex-row gap-x-8 h-full px-16'>
+            <div className='w-full max-w-[350px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-0'>
+              <div className='flex flex-col justify-center'>
+                <div className='w-[150px] xl:w-[200px] mb-2 mx-auto'>
+                  <Image className="rounded-full hidden sm:block" src={person.image} width={200} height={200} alt=""/>
                 </div>
-                <div> avatar name</div>
-                <div>position</div>
+                <div className='text-lg'>{person.name}</div>
+                <div className='text-[12px] uppercase font-extralight tracking-widest hidden sm:block'>{person.position}</div>
               </div>
-              <div>message</div>
+            </div>
+            <div className=' flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20 '>
+              <div className='mb-4 hidden md:block'><FaQuoteLeft className='text-4xl xl:text-6xl text-white/20 mx-auto md:mx-0' /></div>
+              <div className='xl:text-lg text-center md:text-left w-[300px]'>{person.message}</div>
             </div>
           </div>
+
         </SwiperSlide>
       ))}
     </Swiper>

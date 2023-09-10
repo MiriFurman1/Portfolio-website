@@ -4,12 +4,13 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import 'swiper/css/grid';
+import 'swiper/css/navigation';
 
-import { Grid, Pagination } from "swiper";
+import { Grid, Pagination, Navigation} from "swiper";
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { BsArrowRight } from 'react-icons/bs'
+
 const workSlides = [{
   title: 'Happily Ever After',
   path: '/HappilyEverAfter.png',
@@ -54,6 +55,7 @@ const WorkSlider = () => {
     pagination={{
       clickable: true
     }}
+  
     grid={{
       rows: 1,
     }}
